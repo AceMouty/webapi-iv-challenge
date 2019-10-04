@@ -14,6 +14,6 @@ server.get("/", (req, res) => {
     res.status(200).json({data: "Hello node22"})
 })
 
-// Dynamic port
+// Dynamic port, must be done for hosting in heroku
 const port = process.env.PORT || 8000;
 server.listen(port, () => console.log(`API is running on port ${port}`))
