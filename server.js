@@ -1,9 +1,14 @@
 const express = require('express');
 const server = express();
 
+// Bring in routes
+const shoutRoutes = require('./routes/shoutRoutes');
 
 // Teach the server json
 server.use(express.json());
+
+// use in routes
+server.use("/api/shouts", shoutRoutes)
 
 server.get("/", (req, res) => {
     res.status(200).json({data: "Hello node22"})
